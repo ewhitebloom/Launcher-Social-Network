@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many(:interest_groups, through: :memberships)
 
   def memberships(user_id)
-    user = User.where('id = user_id')
+    user = User.where('id = user_id').first
     user.interest_groups
   end
 end
