@@ -33,7 +33,8 @@ describe InterestGroup do
     creator_attributes = {
       first: "Barry",
       last: "Zuckercorn",
-      email: "barry@hesverygood.com"
+      email: "barry@hesverygood.com",
+      role: 'launcher'
     }
     creator = User.create(creator_attributes)
 

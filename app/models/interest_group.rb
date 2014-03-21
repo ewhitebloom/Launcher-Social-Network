@@ -2,6 +2,7 @@ class InterestGroup < ActiveRecord::Base
   has_many :posts
   has_many(:comments, through: :posts)
   has_many :users
+  validates :name, presence: true
   def self.number_posts
     @joined = self.joins(users: [{posts: :comments}])
     @joined.select(:comments).count
