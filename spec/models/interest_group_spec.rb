@@ -1,3 +1,4 @@
+require 'spec_helper'
 
 describe InterestGroup do
   let(:valid_attrs) { { name: 'Steve' } }
@@ -30,8 +31,8 @@ describe InterestGroup do
     it 'should have a creator' do
     # create a User object
     creator_attributes = {
-      first_name: "Barry",
-      last_name: "Zuckercorn",
+      first: "Barry",
+      last: "Zuckercorn",
       email: "barry@hesverygood.com"
     }
     creator = User.create(creator_attributes)
