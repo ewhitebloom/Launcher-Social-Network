@@ -1,4 +1,3 @@
-require 'spec_helper'
 
 describe InterestGroup do
   let(:valid_attrs) { { name: 'Steve' } }
@@ -40,11 +39,11 @@ describe InterestGroup do
     # create an InterestGroup object with that user object as the creator
     group_attributes = {
       name: "Excuses",
-      creator: creator
+      user: creator
     }
     group = InterestGroup.create(group_attributes)
 
-    expect(group.creator).to eq creator
+    expect(group.user).to eq creator
   end
 end
 
