@@ -1,4 +1,4 @@
 class Membership < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :interest_groups
+  belongs_to :user
+  belongs_to :interest_group
 end
