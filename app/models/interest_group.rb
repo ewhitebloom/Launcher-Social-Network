@@ -7,7 +7,7 @@ class InterestGroup < ActiveRecord::Base
 
   def self.number_posts
     @joined = self.joins(users: [{posts: :comments}])
-    @joined.select(:comments).count
+    @joined.select(:posts).count
   end
 
   def self.popular_posts

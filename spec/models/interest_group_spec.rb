@@ -53,11 +53,14 @@ end
 
 describe '#number_of_posts' do
   it 'returns the number of posts' do
-      # your code here for happy path test
+      group = InterestGroup.create({name: 'The Strokes', user: 1 })
+      Post.new({})
+      expect(group.number_posts).to eq 0
     end
 
     it 'returns 0 if there are no posts' do
-      # your code here for boundary condition test
+      group = InterestGroup.create({name: 'The Strokes', user: 1 })
+      expect(group.number_posts).to eq 0
     end
 
     # etc.
