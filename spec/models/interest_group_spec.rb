@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe InterestGroup do
-  let(:valid_attrs) { { name: 'Steve' } }
+  let(:valid_attrs) { { name: 'Steve', user: 1 } }
 
   describe 'validations' do
     context "when given valid attributes" do
@@ -53,13 +53,13 @@ end
 
 describe '#number_of_posts' do
   it 'returns the number of posts' do
-      group = InterestGroup.create({name: 'The Strokes', user: 1 })
+      group = InterestGroup.new(valid_attrs)
       Post.new({user_id: 1, title: 'hi', body: 'hi', date: Time.now, group_id: group.id })
       expect(group.number_posts).to eq 1
     end
 
     it 'returns 0 if there are no posts' do
-      group = InterestGroup.create({name: 'The Strokes', user: 1 })
+      group = InterestGroup.create(valid_attrs)
       expect(group.number_posts).to eq 0
     end
 
