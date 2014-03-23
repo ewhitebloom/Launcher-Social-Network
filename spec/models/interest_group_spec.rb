@@ -62,8 +62,5 @@ describe '#number_of_posts' do
       group = InterestGroup.create(valid_attrs)
       expect(group.number_posts).to eq 0
     end
-
-    # etc.
   end
-
 end
