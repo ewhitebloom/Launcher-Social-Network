@@ -12,8 +12,6 @@ describe InterestGroup do
     end
 
     it 'requires a name' do
-      # Create an InterestGroup using all of the valid attributes except replace
-      # the `name` key with a blank String.
       interest_group = InterestGroup.new(valid_attrs.merge(name: ''))
       expect(interest_group.errors[:name]).to include "can't be blank"
     end
