@@ -31,7 +31,6 @@ describe InterestGroup do
 
   describe 'associations' do
     it 'should have a creator' do
-    # create a User object
     creator_attributes = {
       first: "Barry",
       last: "Zuckercorn",
