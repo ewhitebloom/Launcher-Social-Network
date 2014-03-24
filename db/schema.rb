@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(version: 20140323221635) do
   end
 
   create_table "posts", force: true do |t|
-    t.integer  "user_id",    null: false
-    t.string   "title",      null: false
-    t.string   "body",       null: false
-    t.date     "date",       null: false
+    t.integer  "user_id",           null: false
+    t.string   "title",             null: false
+    t.string   "body",              null: false
+    t.date     "date",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "group_id",   null: false
+    t.integer  "interest_group_id", null: false
   end
 
   create_table "users", force: true do |t|

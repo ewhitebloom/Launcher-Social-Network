@@ -6,12 +6,12 @@ class InterestGroup < ActiveRecord::Base
   validates :user, presence: true
 
   def number_posts(group)
-    @joined = group.joins(users: [{ posts: :comments }])
-    @joined.select(:posts).count
+    @joined = InterestGroup.joins(users: [{ posts: :comments }])
+    @joined.select(:posts).where("interest_group_id = #{group.id}").count
   end
 
   def popular_posts(group)
-    @joined = group.joins(users: [{ posts: :comments }])
-    @joined.select(:posts).where('comments desc').limit(3)
+    @joined = InterestGroup.joins(users: [{ posts: :comments }])
+    @joined.select(:posts).where('comments desc').where("interest_group_id = #{group.id}").limit(3)
   end
 end
