@@ -16,7 +16,7 @@ describe InterestGroup do
     end
 
     it 'requires a creator' do
-      interest_group = InterestGroup.new(valid_attrs.merge(user: '')) 
+      interest_group = InterestGroup.new(valid_attrs.merge(user: ''))
       expect(interest_group.errors[:user]).to include "can't be blank"
     end
 
