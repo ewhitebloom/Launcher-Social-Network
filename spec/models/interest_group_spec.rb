@@ -37,7 +37,6 @@ describe InterestGroup do
       }
       creator = User.create(creator_attributes)
 
-    # create an InterestGroup object with that user object as the creator
     group_attributes = {
       name: "Excuses",
       user: creator
