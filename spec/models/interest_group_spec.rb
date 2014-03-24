@@ -58,7 +58,7 @@ describe InterestGroup do
 
     it 'returns 0 if there are no posts' do
       group = InterestGroup.create(valid_attrs)
-      expect(group.number_posts).to eq 0
+      expect(number_posts(group)).to eq 0
     end
   end
 end
