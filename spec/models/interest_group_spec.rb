@@ -31,13 +31,13 @@ describe InterestGroup do
 
   describe 'associations' do
     it 'should have a creator' do
-    creator_attributes = {
-      first: "Barry",
-      last: "Zuckercorn",
-      email: "barry@hesverygood.com",
-      role: 'launcher'
-    }
-    creator = User.create(creator_attributes)
+      creator_attributes = {
+        first: "Barry",
+        last: "Zuckercorn",
+        email: "barry@hesverygood.com",
+        role: 'launcher'
+      }
+      creator = User.create(creator_attributes)
 
     # create an InterestGroup object with that user object as the creator
     group_attributes = {
