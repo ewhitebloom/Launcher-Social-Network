@@ -13,11 +13,13 @@ describe InterestGroup do
 
     it 'requires a name' do
       interest_group = InterestGroup.new(valid_attrs.merge(name: ''))
+      expect(interest_group).to_not be_valid
       expect(interest_group.errors[:name]).to include "can't be blank"
     end
 
     it 'requires a creator' do
       interest_group = InterestGroup.new(valid_attrs.merge(user: 2))
+      expect(interest_group).to_not be_valid
       expect(interest_group.errors[:user]).to include "can't be blank"
     end
 
@@ -50,8 +52,8 @@ describe InterestGroup do
   describe '#number_of_posts' do
     it 'returns the number of posts' do
       group = InterestGroup.new(valid_attrs)
-      Post.new({user_id: 1, title: 'hi', body: 'hi', date: Time.now, group_id: group.id })
-      expect(group.number_posts).to eq 1
+      Post.new({ user_id: 1, title: 'hi', body: 'hi', date: Time.now, group_id: group.id })
+      expect(number_posts(group)).to eq 1
     end
 
     it 'returns 0 if there are no posts' do
