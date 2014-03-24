@@ -52,14 +52,15 @@ describe InterestGroup do
 
   describe '#number_of_posts' do
     it 'returns the number of posts' do
-      group = InterestGroup.new({ name: 'Hi', user: 1 })
-      Post.new({ user_id: 1, title: 'hi', body: 'hi', date: Time.now, interest_group_id: group.id })
-      expect(number_posts(group)).to eq 1
+      group = InterestGroup.create({ name: 'Hi', user: 1 })
+      Post.create({ user_id: 1, title: 'hi', body: 'hi', date: Time.now, interest_group_id: group.id })
+      binding.pry
+      expect(group.number_posts(group.id)).to eq 1
     end
 
     it 'returns 0 if there are no posts' do
       group = InterestGroup.create({ name: 'Hi', user: 1 })
-      expect(number_posts(group)).to eq 0
+      expect(group.number_posts(group.id)).to eq 0
     end
   end
 end
