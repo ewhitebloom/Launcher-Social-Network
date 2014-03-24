@@ -24,7 +24,7 @@ describe InterestGroup do
     end
 
     it 'optionally takes a description' do
-      interest_group = InterestGroup.new(valid_attrs.merge(user: 2))
+      interest_group = InterestGroup.new(valid_attrs.merge(description: 'a little description'))
       expect(interest_group).to be_valid
     end
   end

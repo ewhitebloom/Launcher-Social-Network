@@ -50,13 +50,14 @@ ActiveRecord::Schema.define(version: 20140323221635) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "first",      null: false
-    t.string   "last",       null: false
-    t.string   "email",      null: false
-    t.string   "role",       null: false
+    t.string   "first",             null: false
+    t.string   "last",              null: false
+    t.string   "email",             null: false
+    t.string   "role",              null: false
     t.string   "fun_fact"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "interest_group_id"
   end
 
 end
