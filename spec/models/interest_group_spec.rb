@@ -5,22 +5,18 @@ describe InterestGroup do
   let(:valid_attrs) { { name: 'Steve', user: 1 } }
 
   describe 'validations' do
-    context "when given valid attributes" do
       it "is valid" do
         interest_group = InterestGroup.new(valid_attrs)
         expect(interest_group).to be_valid
       end
-    end
 
     it 'requires a name' do
       interest_group = InterestGroup.new(valid_attrs.merge(name: ''))
-      expect(interest_group).to_not be_valid
       expect(interest_group.errors[:name]).to include "can't be blank"
     end
 
     it 'requires a creator' do
-      interest_group = InterestGroup.new(valid_attrs.merge(user: ''))
-      expect(interest_group).to_not be_valid
+      interest_group = InterestGroup.new(valid_attrs.merge(user: '')) 
       expect(interest_group.errors[:user]).to include "can't be blank"
     end
 
